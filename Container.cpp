@@ -1,6 +1,6 @@
 #include "Container.h"
 
-Conteiner::Conteiner()
+Conteiner::Conteiner(int to_kepped)
 {
 	last = next = nullptr;
 }
