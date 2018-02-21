@@ -15,6 +15,7 @@ void List::add_container(Conteiner to_add)
 		{
 			temp = temp->next;
 		}
-
+		to_add.last = temp;
+		temp->next = &to_add;
 	}
 }
