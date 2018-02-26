@@ -23,19 +23,21 @@ void List::add_container(Conteiner to_add)
 void List::remove_container(Conteiner to_remove)
 {
 	Conteiner *temp = first;
+	Conteiner *remove_this;
 	if (first = nullptr) return;
 	else if (first->kepped_value == to_remove.kepped_value)
 	{
 		first = temp->next;
 		first->last = nullptr;
 	}
-	else
+	else 
 	{
 		while (temp->next != nullptr)
 		{
 			if(temp->next->kepped_value == to_remove.kepped_value)
 			{
-				temp->next =
+				  remove_this = temp->next ;
+
 			}
 		}
 	}
