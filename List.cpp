@@ -29,16 +29,28 @@ void List::remove_container(Conteiner to_remove)
 	{
 		first = temp->next;
 		first->last = nullptr;
+		return;
 	}
 	else 
 	{
-		while (temp->next != nullptr)
+		while (temp->next->next != nullptr)
 		{
 			if(temp->next->kepped_value == to_remove.kepped_value)
 			{
 				  remove_this = temp->next ;
-
+				  temp->next->next->last = temp;
+				  temp->next = temp->next->next;
+				  delete remove_this;
+				  remove_this = nullptr;
+				  return;
 			}
+			temp = temp->next;
+		}
+		if (temp->next->kepped_value == to_remove.kepped_value)
+		{
+			delete temp->next;
+			temp->next = nullptr;
+			return;
 		}
 	}
 }
