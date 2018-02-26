@@ -26,9 +26,12 @@ void List::remove_container(Conteiner to_remove)
 	Conteiner *remove_this;
 	if (first = nullptr) return;
 	else if (first->kepped_value == to_remove.kepped_value)
-	{
+	{	
+		remove_this = first;
 		first = temp->next;
 		first->last = nullptr;
+		delete remove_this;
+		remove_this = nullptr;
 		return;
 	}
 	else 
